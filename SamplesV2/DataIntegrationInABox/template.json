@@ -9,7 +9,7 @@
       "metadata": {
         "description": "A short identifier (up to 8 characters) for your project that will be added to your resource names"
       }
-    },
+    },https://github.com/Azure/Azure-DataFactory
     "userNameDynamics365": {
       "type": "string",
       "metadata": {
@@ -85,7 +85,7 @@
       "type": "Microsoft.DocumentDB/databaseAccounts",
       "apiVersion": "2021-04-15",
       "name": "[variables('cosmosdbname')]",
-      "location": "West Europe",
+      "location": "[resourceGroup().location]",
       "tags": "[variables('tags')]",
       "kind": "GlobalDocumentDB",
       "identity": {
@@ -110,7 +110,7 @@
         },
         "locations": [
           {
-            "locationName": "West Europe",
+            "locationName": "[resourceGroup().location]",
             "provisioningState": "Succeeded",
             "failoverPriority": 0,
             "isZoneRedundant": false
@@ -137,7 +137,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2021-04-01",
       "name": "[variables('storageAccountName')]",
-      "location": "westeurope",
+      "location": "[resourceGroup().location]",
       "tags": "[variables('tags')]",
       "sku": {
         "name": "Standard_LRS",
@@ -173,7 +173,7 @@
       "type": "Microsoft.Synapse/workspaces",
       "apiVersion": "2021-04-01-preview",
       "name": "[variables('synapseAccountName')]",
-      "location": "westeurope",
+      "location": "[resourceGroup().location]",
       "identity": {
         "type": "SystemAssigned"
       },
@@ -408,7 +408,7 @@
       "type": "Microsoft.Synapse/workspaces/sqlPools",
       "apiVersion": "2021-04-01-preview",
       "name": "[concat(variables('synapseAccountName'), '/', variables('dedicatedPoolName'))]",
-      "location": "westeurope",
+      "location": "[resourceGroup().location]",
       "dependsOn": [
         "[resourceId('Microsoft.Synapse/workspaces', variables('synapseAccountName'))]"
       ],
