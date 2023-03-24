@@ -9,7 +9,7 @@
       "metadata": {
         "description": "A short identifier (up to 8 characters) for your project that will be added to your resource names"
       }
-    },https://github.com/Azure/Azure-DataFactory
+    },
     "userNameDynamics365": {
       "type": "string",
       "metadata": {
